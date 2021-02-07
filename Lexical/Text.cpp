@@ -77,10 +77,7 @@ void Text::showStructure() const
 // testing/debugging purposes only.
 {
 	int j; // Loop counter
-	for (j = 0; j < bufferSize; j++)
-		cout << j << "\t";
-	cout << endl;
 	for (j = 0; buffer[j] != '\0'; j++)
-		cout << buffer[j] << "\t";
-	cout << "\\0" << endl;
+		cout << buffer[j];
+	cout << endl;
 }
