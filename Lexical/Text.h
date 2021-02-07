@@ -10,34 +10,35 @@
 #include <iostream>
 using namespace std;
 
+///Preconditions: Function templates must be without error, and be referenced in the .cpp file.
+///Postconditions: The functions are utilized in text.cpp to perform operations with the Text objects.
+///Input: No input
+///Output: The functions must output their desired criteria as mentioned below in the comments
 class Text
 {
 public:
-	// Constructors and operator=
-	Text(const char* charSeq = ""); // Initialize using char*
-	Text(const Text& other); // Copy constructor
-	void operator = (const Text& other); // Assignment
+	//Constructors and operator=
+	Text(const char* charSeq = ""); //Initialize using char*
+	Text(const Text& other); //Copies constructor
+	void operator = (const Text& other); //operator assignment
 
-	// Destructor
+	//Destructor
 	~Text();
 
-	// Text operations
-	int getLength() const; // # characters
-	char operator [] (int n) const; // Subscript
+	//Text operations
+	int getLength() const; //gives number of characters
+	char operator[] (int n) const; //Subscript
 	void clear(); // Clear string
 
 	// Output the string structure -- used in testing/debugging
 	void showStructure() const;
 
-	//--------------------------------------------------------------------
-	// In-lab operations
 private:
 	// Data members
 	int bufferSize; // Size of the string buffer
 	char* buffer; // Text buffer containing a null-terminated sequence of characters
 
 	// Friends
-
 	// Text input/output operations (In-lab Exercise 1)
 	friend istream& operator >> (istream& input, Text& inputText);
 	friend ostream& operator << (ostream& output, const Text& outputText);
